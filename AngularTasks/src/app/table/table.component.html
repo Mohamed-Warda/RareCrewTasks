@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-6 ms-5">
+      <table class="table table-bordered ">
+        <thead>
+          <tr class="bg-dark text-white text-center">
+            
+            <th  scope="col">Full Name</th>
+            <th scope="col">Total Hours Worked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center"  [ngClass]="{'bg-danger': floorValue( emp[1])  < 100}" *ngFor="let emp of EmployeeList  ">
+           
+            <td>{{ emp[0]  }}</td>
+            <td>{{ floorValue( emp[1]) }} hrs</td>
+          </tr>
+         
+        </tbody>
+      </table>  </div>
+    <div class="col-sm-5">
+        <ng-container *ngIf="dataLoaded">
+            <app-pie-chart [pieChartData]="EmployeeList"></app-pie-chart>
+          </ng-container>    </div>
+    
+  </div>
+  
+  
